@@ -1,0 +1,53 @@
+{
+  "name": "amns",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Alumni management and networking system",
+  "engines": {
+    "node": ">=16.6.0",
+    "npm": ">=8.11.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --es-module-specifier-resolution=node server.js",
+    "format-check": "prettier --check . --ignore-path .gitignore",
+    "format-write": "prettier --write . --ignore-path .gitignore",
+    "lint-check": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "prepare": "husky install",
+    "start": "node --es-module-specifier-resolution=node server.js",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*": "yarn lint-check"
+  },
+  "jest": {
+    "collectCoverage": true
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jest": "^29.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.1",
+    "sequelize": "^6.26.0",
+    "sqlite3": "^5.1.2",
+    "supertest": "^6.3.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.2"
+  }
+}
