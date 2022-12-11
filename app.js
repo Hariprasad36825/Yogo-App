@@ -40,6 +40,10 @@ if (process.env.NODE_ENV === 'test') {
   )
 }
 
+app.get('/', (req, res) => {
+  res.sendStatus(200)
+})
+
 // route
 app.use('/api/user', UserRouter)
 app.use('/api/batch', batchRouter)
