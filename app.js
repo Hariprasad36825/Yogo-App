@@ -32,6 +32,12 @@ app.use((req, res, next) => {
 // cors for development
 if (process.env.NODE_ENV === 'test') {
   app.use(cors({ origin: true, credentials: true }))
+} else {
+  app.use(
+    cors({
+      origin: 'https://bend-it-over.onrender.com'
+    })
+  )
 }
 
 // route

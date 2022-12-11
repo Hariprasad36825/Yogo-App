@@ -6,3 +6,4 @@ junit.xml
 node_modules
 MEGA-RECOVERYKEY.txt
 uploads
+database.sqlite
