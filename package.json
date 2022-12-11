@@ -1,8 +1,7 @@
 {
-  "name": "amns",
+  "name": "bend-it-over",
   "version": "1.0.0",
-  "type": "module",
-  "description": "Alumni management and networking system",
+  "description": "Bend it Over - An yogo Center booking application",
   "engines": {
     "node": ">=16.6.0",
     "npm": ">=8.11.0"
@@ -16,7 +15,8 @@
     "lint-fix": "eslint --fix .",
     "prepare": "husky install",
     "start": "node --es-module-specifier-resolution=node server.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "babel . -d dist --ignore node_modules/*"
   },
   "lint-staged": {
     "*": "yarn lint-check"
@@ -27,6 +27,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
@@ -37,7 +40,6 @@
     "jest": "^29.3.1",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.20",
-    "prettier": "^2.8.1",
     "sequelize": "^6.26.0",
     "sqlite3": "^5.1.2",
     "supertest": "^6.3.3",
@@ -48,6 +50,7 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.2"
+    "husky": "^8.0.2",
+    "prettier": "^2.8.1"
   }
 }
