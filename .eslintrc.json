@@ -25,5 +25,12 @@
     ],
     "space-before-function-paren": 0
   },
-  "ignorePatterns": [".*", "yarn.lock", "*.json", "coverage/*", "*.png"]
+  "ignorePatterns": [
+    ".*",
+    "yarn.lock",
+    "*.json",
+    "coverage/*",
+    "*.png",
+    "dist/*"
+  ]
 }
