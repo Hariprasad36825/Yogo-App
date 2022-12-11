@@ -1,6 +1,10 @@
-import { BatchMessage, wrapper } from "../Responses"
-import { createBatch, getBatches, UpdateBatch } from "../services/batch.services"
-import { ACCEPTED, CREATION_SUCCESSFULL, OK } from "../statusCodes"
+import { BatchMessage, wrapper } from '../Responses'
+import {
+  createBatch,
+  getBatches,
+  UpdateBatch
+} from '../services/batch.services'
+import { ACCEPTED, CREATION_SUCCESSFULL, OK } from '../statusCodes'
 
 export const GetBatchesController = async (req, res) => {
   res.status(OK).send(await getBatches())

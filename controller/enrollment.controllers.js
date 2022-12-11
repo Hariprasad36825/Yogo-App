@@ -1,6 +1,10 @@
-import { EnrollmentMessage, wrapper } from "../Responses"
-import { createEnrollment, getEnrollments, updateEnrollment } from "../services/enrollment.services"
-import { ACCEPTED, CREATION_SUCCESSFULL, OK } from "../statusCodes"
+import { EnrollmentMessage, wrapper } from '../Responses'
+import {
+  createEnrollment,
+  getEnrollments,
+  updateEnrollment
+} from '../services/enrollment.services'
+import { ACCEPTED, CREATION_SUCCESSFULL, OK } from '../statusCodes'
 
 export const createEnrollmentController = async (req, res) => {
   const user = req.user.id

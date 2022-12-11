@@ -1,7 +1,11 @@
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import express from 'express'
-import { handleDatabaseError, handleDefaultError, handleValidationError } from './middleware/errorHandler.middleware'
+import {
+  handleDatabaseError,
+  handleDefaultError,
+  handleValidationError
+} from './middleware/errorHandler.middleware'
 import { batchRouter } from './routes/batch.route'
 import { EnrollmentRouter } from './routes/enrollment.routes'
 import { UserRouter } from './routes/user.route'

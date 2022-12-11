@@ -35,11 +35,14 @@ export const createRefreshToken = async (user, oldUid) => {
 }
 
 export const updateToken = async (oldUid, payload) => {
-  await User.upsert({ uid: payload.uid }, {
-    where: {
-      uid: oldUid
+  await Token.upsert(
+    { uid: payload.uid },
+    {
+      where: {
+        uid: oldUid
+      }
     }
-  })
+  )
 }
 
 export const InsertToken = async ({ uid, user }) => {

@@ -1,4 +1,4 @@
-import { Enrollment } from "../models/enrollment.model"
+import { Enrollment } from '../models/enrollment.model'
 
 export const createEnrollment = async (user, batch, paid, duration) => {
   await Enrollment.create({ user, batch, paid, duration })

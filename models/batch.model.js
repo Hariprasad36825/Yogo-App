@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../config/db_config";
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../config/db_config'
 
 export const Batch = sequelize.define('Batch', {
   id: {
@@ -17,4 +17,3 @@ export const Batch = sequelize.define('Batch', {
     defaultValue: 500
   }
 })
-

@@ -1,6 +1,6 @@
-import bcrypt from 'bcryptjs';
-import { User } from "../models/user.model";
-import { createAuthToken, createRefreshToken } from './token.services';
+import bcrypt from 'bcryptjs'
+import { User } from '../models/user.model'
+import { createAuthToken, createRefreshToken } from './token.services'
 
 export const CreateUser = async (email, password, name, age, phone) => {
   const salt = await bcrypt.genSalt(10)
@@ -13,7 +13,6 @@ export const comparePassword = async (password, user) => {
   return await bcrypt.compare(password, user.password)
 }
 
-
 export const getUser = async (email) => {
   return await User.findOne({ where: { email } })
 }
@@ -24,4 +23,3 @@ export const createToken = async (user) => {
   const type = user.type || 'user'
   return { AccessToken, RefreshToken, type }
 }
-

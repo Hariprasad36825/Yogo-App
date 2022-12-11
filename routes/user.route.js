@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { body } from 'express-validator';
-import { CreateUserController, LoginUser } from "../controller/user.controller";
-import catchAsyncError from "../utils/catchAsyncError";
+import { Router } from 'express'
+import { body } from 'express-validator'
+import { CreateUserController, LoginUser } from '../controller/user.controller'
+import catchAsyncError from '../utils/catchAsyncError'
 export const UserRouter = Router()
 
 UserRouter.post(
@@ -23,8 +23,12 @@ UserRouter.post(
   body('password', 'Please enter a password with atleast one number').matches(
     /^(?=.*\d)[0-9a-zA-Z!@#$&()\\-`.+,/]{1,}$/
   ),
-  body('age', 'please enter age between 18 and 65').custom(a => a <= 65 && a >= 18),
-  body('phone', 'please enter valid phone').matches(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/),
+  body('age', 'please enter age between 18 and 65').custom(
+    (a) => a <= 65 && a >= 18
+  ),
+  body('phone', 'please enter valid phone').matches(
+    /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
+  ),
   (req, res, next) => {
     catchAsyncError(CreateUserController, req, res, next)
   }

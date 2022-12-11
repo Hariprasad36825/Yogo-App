@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../config/db_config";
-import { Batch } from './batch.model';
-import { User } from './user.model';
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../config/db_config'
+import { Batch } from './batch.model'
+import { User } from './user.model'
 
 export const Enrollment = sequelize.define('Enrollment', {
   id: {
@@ -33,4 +33,3 @@ export const Enrollment = sequelize.define('Enrollment', {
     allowNull: false
   }
 })
-

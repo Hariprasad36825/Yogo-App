@@ -1,11 +1,11 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from "../config/db_config";
-import { User } from './user.model';
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../config/db_config'
+import { User } from './user.model'
 
 export const Token = sequelize.define('Token', {
   uid: {
     type: DataTypes.STRING,
-    primaryKey: true,
+    primaryKey: true
   },
   user: {
     type: DataTypes.INTEGER,
@@ -15,4 +15,3 @@ export const Token = sequelize.define('Token', {
     }
   }
 })
-

@@ -1,4 +1,4 @@
-import { Batch } from "../models/batch.model"
+import { Batch } from '../models/batch.model'
 
 export const createBatch = async (timing) => {
   return await Batch.create({ timing })

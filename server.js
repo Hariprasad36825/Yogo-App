@@ -7,10 +7,9 @@ const HOST = '127.0.0.1'
 
 // App
 sequelize.authenticate().then(async () => {
-  // sync db 
+  // sync db
   await sequelize.sync()
 
   app.listen(PORT, HOST)
   console.log(`connection establised on ${HOST}:${PORT}`)
 })
-

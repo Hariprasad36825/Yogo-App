@@ -18,7 +18,7 @@ export const isAuthorised = (role) => (req, res, next) => {
       if (error.name === 'TokenExpiredError') {
         return res.status(FORBIDDEN_REQUEST).send(wrapper(tokenError.expired))
       }
-      return res.status(INVALID_TOKEN).send(wrapper(tokenError.invalid))
+      return res.status(UNAUTHORIZED).send(wrapper(tokenError.invalid))
     }
     if (role && decoded.user.type !== role) {
       return res
