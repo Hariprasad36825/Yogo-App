@@ -4,9 +4,11 @@
 A fitness app to book yoga classes online
 
 ER Diagram: 
+
 ![Er diagram](https://github.com/Hariprasad36825/Yogo-App/blob/master/readme%20images/ER-diagram.png)
 
-Workflow Diagram
+Workflow Diagram:
+
 ![worflow](https://github.com/Hariprasad36825/Yogo-App/blob/master/readme%20images/worflow.png)
 ## Run Locally
 
