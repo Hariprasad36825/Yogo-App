@@ -5,8 +5,7 @@ export const Batch = sequelize.define('Batch', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
-    primaryKey: true,
-    defaultValue: 1
+    primaryKey: true
   },
   timing: {
     type: DataTypes.STRING,

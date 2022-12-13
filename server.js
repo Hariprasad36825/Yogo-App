@@ -1,6 +1,8 @@
 import dotenv from 'dotenv'
 import app from './app'
 import { sequelize } from './config/db_config'
+import { Batch } from './models/batch.model'
+import { Enrollment } from './models/enrollment.model'
 dotenv.config()
 
 // Constants
@@ -11,6 +13,8 @@ const HOST = '127.0.0.1'
 // App
 sequelize.authenticate().then(async () => {
   // sync db
+  Batch.hasMany(Enrollment)
+  Enrollment.belongsTo(Batch, { foreignKey: 'batch' })
   await sequelize.sync()
   if (env === 'test') {
     app.listen(PORT, HOST)

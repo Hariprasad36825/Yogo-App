@@ -14,7 +14,6 @@ if (env === 'test') {
 } else {
   sequelize = new Sequelize(db, username, password, {
     dialect: 'sqlite',
-    // we will be saving our db as a file on this path
     storage: 'database.sqlite'
   })
 }

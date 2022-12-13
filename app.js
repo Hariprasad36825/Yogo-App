@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser'
 import cors from 'cors'
+import dotenv from 'dotenv'
 import express from 'express'
 import {
   handleDatabaseError,
@@ -9,8 +10,8 @@ import {
 import { batchRouter } from './routes/batch.route'
 import { EnrollmentRouter } from './routes/enrollment.routes'
 import { UserRouter } from './routes/user.route'
-import { OK } from './statusCodes'
 
+dotenv.config()
 const app = express()
 
 app.use(bodyParser.json())
@@ -18,18 +19,19 @@ app.use(bodyParser.json())
 // cors configuration
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'GET, POST, OPTIONS, PUT, PATCH, DELETE'
+  )
   res.header(
     'Access-Control-Allow-Headers',
-    'Origin, X-Requested, Content-Type, Accept Authorization'
+    'Origin, X-Requested-With, Content-Type, Accept'
   )
-  if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', 'POST, PUT, PATCH, GET, DELETE')
-    return res.status(OK).json({})
-  }
   next()
 })
 
 // cors for development
+console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'test') {
   app.use(cors({ origin: true, credentials: true }))
 } else {

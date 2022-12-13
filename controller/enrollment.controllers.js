@@ -17,8 +17,8 @@ export const createEnrollmentController = async (req, res) => {
 }
 
 export const updateEnrollmentController = async (req, res) => {
-  const { id, paid } = req.body
-  await updateEnrollment(id, paid)
+  const { id, paid, batch } = req.body
+  await updateEnrollment(id, paid, batch)
   res.status(ACCEPTED).send(wrapper(EnrollmentMessage.updated))
 }
 

@@ -26,6 +26,10 @@ export const handleDatabaseError = (error, req, res, next) => {
 }
 
 export const handleDefaultError = (error, req, res, next) => {
+  console.log(
+    '🚀 ~ file: errorHandler.middleware.js:29 ~ handleDefaultError ~ error',
+    error
+  )
   if (error instanceof Error) {
     return res.status(INTERNAL_SERVER_ERROR).send(wrapper(error.message))
   }

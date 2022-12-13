@@ -7,8 +7,7 @@ export const Enrollment = sequelize.define('Enrollment', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
-    primaryKey: true,
-    defaultValue: 1
+    primaryKey: true
   },
   user: {
     type: DataTypes.INTEGER,
