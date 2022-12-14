@@ -16,6 +16,6 @@ export const getEnrollments = async (user, duration) => {
       model: Batch,
       attributes: ['id', 'timing', 'fee']
     },
-    attributes: ['id', 'batch', 'paid', 'duration', 'Batch']
+    attributes: ['id', 'batch', 'paid', 'duration']
   })
 }
